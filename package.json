@@ -1,0 +1,33 @@
+{
+  "name": "safe-openclaw",
+  "version": "1.0.0",
+  "description": "A secure, sandboxed AI agent inspired by OpenClaw, built with TypeScript and justbash to safely execute code in an isolated environment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexh662/safe-openclaw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alexh662/safe-openclaw/issues"
+  },
+  "homepage": "https://github.com/alexh662/safe-openclaw#readme",
+  "dependencies": {
+    "@ai-sdk/openai": "^3.0.41",
+    "ai": "^6.0.116",
+    "bash-tool": "^1.3.15",
+    "dotenv": "^17.3.1",
+    "just-bash": "^2.12.8"
+  },
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
