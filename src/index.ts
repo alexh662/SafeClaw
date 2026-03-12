@@ -1,11 +1,16 @@
+#!/usr/bin/env tsx
+
 import "dotenv/config";
 import * as readline from "node:readline/promises";
 import { ToolLoopAgent, stepCountIs } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
-import { createBashTool, CreateBashToolOptions } from "bash-tool";
+import { createBashTool } from "bash-tool";
 import { Bash, OverlayFs, ReadWriteFs, MountableFs, InMemoryFs } from "just-bash";
 import { mkdirSync } from "fs";
 import { type ModelMessage } from "ai";
+import { setup } from "./env-setup.js";
+
+await setup();
 
 mkdirSync(process.env.OUTPUT_DIR ?? "./output", { recursive: true });
 
@@ -85,7 +90,7 @@ process.on("SIGINT", () => {
 });
 
 async function main() {
-    console.log("SafeClaw ready. Type 'exit' to quit or '/print-bash' to toggle bash output.\n");
+    console.log("SafeClaw ready. Type 'exit' or use Ctrl+C to quit. Type '/print-bash' to toggle bash output.\n");
 
     while (true) {
         let userInput: String;
