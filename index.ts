@@ -4,6 +4,10 @@ import { ToolLoopAgent, stepCountIs } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
 import { createBashTool, CreateBashToolOptions } from "bash-tool";
 import { Bash, OverlayFs, ReadWriteFs, MountableFs, InMemoryFs } from "just-bash";
+import { mkdirSync } from "fs";
+import { type ModelMessage } from "ai";
+
+mkdirSync(process.env.OUTPUT_DIR ?? "./output", { recursive: true });
 
 const projectFs = new OverlayFs({ root: process.cwd() });
 const outputFs = new ReadWriteFs({ root: process.env.OUTPUT_DIR ?? "./output" });
@@ -39,6 +43,8 @@ const { tools } = await createBashTool({
         if (verbose) console.log(`  exit: ${result.exitCode}`);
     },
 });
+
+const messages: ModelMessage[] = [];
 
 // create readline interface for user input
 const rl = readline.createInterface({
@@ -105,12 +111,13 @@ async function main() {
         process.stdout.write("\nSafeClaw: Thinking...");
 
         try {
-            const result = await agent.generate({
-                prompt: userInput,
-            });
+            messages.push({ role: "user", content: userInput });
+            const result = await agent.generate({ prompt: messages });
+            messages.push({ role: "assistant", content: result.text });
 
             console.log(`\nSafeClaw: ${result.text}\n`);
 
+            // for debugging:
             // console.log("result keys:", Object.keys(result));
             // console.log("result.text:", JSON.stringify(result.text));
             // console.log("steps:", (result as any).steps?.length);
