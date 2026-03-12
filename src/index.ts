@@ -90,7 +90,7 @@ process.on("SIGINT", () => {
 });
 
 async function main() {
-    console.log("SafeClaw ready. Type 'exit' or use Ctrl+C to quit. Type '/print-bash' to toggle bash output.\n");
+    console.log("SafeClaw ready. Type 'exit' or use Ctrl+C to quit. Type '/print-bash' to toggle bash output or '/reset' to reset the conversation.\n");
 
     while (true) {
         let userInput: String;
@@ -110,6 +110,12 @@ async function main() {
         if (userInput === "/print-bash") {
             verbose = !verbose;
             console.log(`Bash output ${verbose ? "shown" : "not shown"}`);
+            continue;
+        }
+
+        if (userInput === "/reset") {
+            messages.length = 0;
+            console.log("Conversation reset.");
             continue;
         }
 
