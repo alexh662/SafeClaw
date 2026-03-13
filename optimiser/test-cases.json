@@ -1,0 +1,145 @@
+[
+    {
+        "category": "file_creation",
+        "task": "create a python script called fibonacci.py that prints the first 10 fibonacci numbers. Output the result to the terminal and save the file to /home/user/output",
+        "expected_files": ["fibonacci.py"],
+        "expected_output_contains": ["0", "1", "1", "2", "3", "5", "8", "13", "21", "34"]
+    },
+    {
+        "category": "file_creation",
+        "task": "create a python script called squares.py that prints the squares of numbers 1 to 10, save it to /home/user/output and run it",
+        "expected_files": ["squares.py"],
+        "expected_output_contains": ["1", "4", "9", "16", "25", "36", "49", "64", "81", "100"]
+    },
+    {
+        "category": "file_creation",
+        "task": "create a text file called colours.txt containing exactly these 10 colours each on a new line: red, orange, yellow, green, blue, indigo, violet, black, white, pink and save it to /home/user/output",
+        "expected_files": ["colours.txt"],
+        "expected_output_contains": [],
+        "expected_file_contains": {
+            "colours.txt": ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "black", "white", "pink"]
+        }
+    },
+    {
+        "category": "file_creation",
+        "task": "create a python script called matrix.py that defines a 3x3 matrix [[1,2,3],[4,5,6],[7,8,9]], prints it formatted as a grid, calculates and prints the transpose, then calculates and prints the sum of each row and each column, save it to /home/user/output and run it",
+        "expected_files": ["matrix.py"],
+        "expected_output_contains": ["6", "15", "24", "12", "15", "18"]
+    },
+    {
+        "category": "file_creation",
+        "task": "create a python script called roman.py that converts integers to roman numerals and prints each conversion in the format 'N = ROMAN', save it to /home/user/output and run it with inputs: 1, 4, 9, 14, 40, 90, 399, 1994, 2024",
+        "expected_files": ["roman.py"],
+        "expected_output_contains": ["1 = I", "4 = IV", "9 = IX", "14 = XIV", "40 = XL", "90 = XC", "399 = CCCXCIX", "1994 = MCMXCIV", "2024 = MMXXIV"]
+    },
+    {
+        "category": "bug_fixing",
+        "task": "read the file sieve.py in my project, identify the bug, fix it, run it and report the correct list of prime numbers up to 50. Save the fixed file as sieve-fixed.py to /home/user/output",
+        "expected_files": ["sieve-fixed.py"],
+        "expected_output_contains": ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29", "31", "37", "41", "43", "47"]
+    },
+    {
+        "category": "bug_fixing",
+        "task": "create a python script called divide.py that divides 10 by 0, run it, identify the error, fix it by dividing by 2 instead, run it again and report the result, save it to /home/user/output",
+        "expected_files": ["divide.py"],
+        "expected_output_contains": ["5.0"]
+    },
+    {
+        "category": "bug_fixing",
+        "task": "create a python script called recursive_sum.py with a recursive function that sums a list but is missing the base case, save it to /home/user/output. Copy recursive_sum.py to a new file called fixed_recursive_sum.py and fix it by adding the correct base case, save to /home/user/output",
+        "expected_files": ["recursive_sum.py", "fixed_recursive_sum.py"],
+        "expected_output_contains": []
+    },
+    {
+        "category": "bug_fixing",
+        "task": "create a python script called palindrome_checker.py that checks if strings are palindromes but has a bug that makes it case sensitive causing 'Racecar' to return false, run it to demonstrate the bug. Copy it to fixed_palindrome_checker.py, fix it to be case insensitive, run it and verify that 'Racecar', 'racecar', 'hello', 'Madam' all print the correct true/false result, save both to /home/user/output",
+        "expected_files": ["palindrome_checker.py", "fixed_palindrome_checker.py"],
+        "expected_output_contains": ["Racecar: false", "racecar: true", "hello: false", "Madam: true"]
+    },
+    {
+        "category": "bug_fixing",
+        "task": "create a python script called linked_list.py that implements a linked list with append and print methods but has a bug in the print method causing it to skip the last node, run it with nodes [1,2,3,4,5] to demonstrate the bug. Copy it to fixed_linked_list.py, fix the print method, run it and verify it prints '1 2 3 4 5', save both to /home/user/output",
+        "expected_files": ["linked_list.py", "fixed_linked_list.py"],
+        "expected_output_contains": ["1 2 3 4", "1 2 3 4 5"]
+    },
+    {
+        "category": "bash_scripting",
+        "task": "using only bash commands, read optimizer/test-files/logs.txt, extract all ERROR lines, sort them by timestamp, and print each one followed by a total count in the format 'total errors: N'",
+        "expected_files": [],
+        "expected_output_contains": ["09:14:07", "10:22:51", "11:45:00", "14:02:09", "total errors: 4"]
+    },
+    {
+        "category": "bash_scripting",
+        "task": "using only bash commands, read optimizer/test-files/words.txt, count the frequency of every word, print the top 5 most frequent words sorted by count descending in the format 'N WORD'",
+        "expected_files": [],
+        "expected_output_contains": ["9 the", "5 fox", "3 quick", "3 lazy", "3 dog"]
+    },
+    {
+        "category": "bash_scripting",
+        "task": "using only bash commands, read optimizer/test-files/sales.csv, skip the header, calculate total units sold per product by summing q1+q2+q3+q4 using awk, print each product and total in the format 'PRODUCT: N units' sorted by total descending",
+        "expected_files": [],
+        "expected_output_contains": ["eggs: 1190 units", "bananas: 780 units", "bread: 595 units", "apples: 435 units", "milk: 355 units", "cheese: 280 units"]
+    },
+    {
+        "category": "bash_scripting",
+        "task": "using only bash commands, read optimizer/test-files/config.ini, extract all key=value pairs, filter to only pairs where the value is a number, print them in the format 'KEY = VALUE' sorted by value descending",
+        "expected_files": [],
+        "expected_output_contains": ["ttl = 3600", "max_size = 500", "max_connections = 100", "max_size_mb = 100", "port = 3000"]
+    },
+    {
+        "category": "bash_scripting",
+        "task": "using only bash commands, create a tar archive of the optimizer/test-files directory, save it to /home/user/output/test-files-backup.tar.gz, then list the contents of the archive and print the total number of files archived",
+        "expected_files": ["test-files-backup.tar.gz"],
+        "expected_output_contains": ["students.json", "sales.csv", "logs.txt", "config.ini", "words.txt"],
+        "expected_patterns": ["total: [0-9]+ files|[0-9]+ files archived"]
+    },
+    {
+        "category": "multi_step",
+        "task": "write a python script called pipeline.py that reads optimizer/test-files/students.json, filters out students under 18, calculates each remaining student's average score, assigns a letter grade (A>=90, B>=80, C>=70, D>=60, F<60), writes a summary to /home/user/output/student_report.txt in the format 'NAME: AVERAGE GRADE', then runs it and prints the contents of the report",
+        "expected_files": ["pipeline.py", "student_report.txt"],
+        "expected_output_contains": ["alice: 86.50 B", "charlie: 80.75 B", "diana: 63.75 D", "eve: 90.00 A"]
+    },
+    {
+        "category": "multi_step",
+        "task": "write a python script called sales_pipeline.py that reads optimizer/test-files/sales.csv, calculates total annual revenue per product, identifies the best and worst performing quarter across all products combined, writes a markdown report to /home/user/output/sales_report.md with a revenue table and quarter analysis, then runs it and prints the report contents",
+        "expected_files": ["sales_pipeline.py", "sales_report.md"],
+        "expected_output_contains": ["eggs", "bananas", "best quarter", "worst quarter", "q3", "q2"]
+    },
+    {
+        "category": "multi_step",
+        "task": "write a python script called diff_pipeline.py that reads optimizer/test-files/config.ini, creates a modified version by doubling all numeric values, implements a diff that prints every changed line in the format '- OLD' and '+ NEW', saves the diff to /home/user/output/config.diff and runs it",
+        "expected_files": ["diff_pipeline.py", "config.diff"],
+        "expected_output_contains": [
+            "- port=3000",
+            "+ port=6000",
+            "- max_connections=100",
+            "+ max_connections=200",
+            "- pool_size=10",
+            "+ pool_size=20",
+            "- ttl=3600",
+            "+ ttl=7200",
+            "- max_size=500",
+            "+ max_size=1000"
+        ]
+    },
+    {
+        "category": "multi_step",
+        "task": "write a python script called scheduler_pipeline.py that assigns these exact tasks with durations to 3 workers using a greedy algorithm that always assigns the next task to the worker with the lowest current load: task_a=30, task_b=20, task_c=50, task_d=10, task_e=40, task_f=25, task_g=15. Print each worker's assigned tasks and total load, then print the makespan, save results to /home/user/output/schedule.txt and run it",
+        "expected_files": ["scheduler_pipeline.py", "schedule.txt"],
+        "expected_output_contains": [
+            "task_a", "task_b", "task_c", "task_d", "task_e", "task_f", "task_g",
+            "worker 1", "worker 2", "worker 3",
+            "makespan: 70"
+        ]
+    },
+    {
+        "category": "multi_step",
+        "task": "write a python script called graph_pipeline.py that builds a directed graph from this exact edge list: A->B, A->C, B->D, C->D, D->E, B->E, runs both BFS and DFS from node A, prints the traversal order for each prefixed with 'BFS:' and 'DFS:', then finds the shortest path from A to E using BFS and prints it in the format 'shortest path: A -> ... -> E', saves results to /home/user/output/graph_results.txt and runs it",
+        "expected_files": ["graph_pipeline.py", "graph_results.txt"],
+        "expected_output_contains": [
+            "BFS: A B C D E",
+            "shortest path: A -> B -> E"
+        ],
+        "expected_patterns": ["DFS: A [A-E ]+"]
+    }
+]

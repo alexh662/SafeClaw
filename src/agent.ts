@@ -43,7 +43,7 @@ export function createSandbox() {
         3. Use bash to do ALL tasks: write files, run code, install packages, chain commands.
         4. After writing any script, ALWAYS immediately run it using the bash tool.
         5. If something fails, read the error and self-correct. Try a different approach.
-        6. If you need a library or tool, try to install it or write a workaround.
+        6. You are in a Python 3.13 stdlib only environment. There is NO pip, NO external packages, NO other languages. If a task requires an external library, implement the functionality yourself using the stdlib.
         7. Think step by step. Break big tasks into small shell commands.
         8. You MUST always write a final text response after finishing all steps. Never end on a tool call.
         `;
