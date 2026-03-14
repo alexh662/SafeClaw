@@ -1,0 +1,15 @@
+2024-01-15 08:23:11 INFO  Server started on port 3000
+2024-01-15 08:23:45 INFO  Connected to database
+2024-01-15 09:01:32 WARNING  High memory usage detected: 87%
+2024-01-15 09:14:07 ERROR  Failed to process request: timeout after 30s
+2024-01-15 09:14:08 INFO  Retrying request...
+2024-01-15 09:14:10 INFO  Request successful on retry
+2024-01-15 10:22:51 ERROR  Database connection lost
+2024-01-15 10:22:52 INFO  Attempting reconnect...
+2024-01-15 10:22:55 INFO  Database reconnected
+2024-01-15 11:03:17 WARNING  Slow query detected: 4200ms
+2024-01-15 11:45:00 ERROR  Out of memory: killed process 1842
+2024-01-15 12:00:00 INFO  Daily backup started
+2024-01-15 12:04:33 INFO  Daily backup completed
+2024-01-15 13:17:44 WARNING  Disk usage at 91%
+2024-01-15 14:02:09 ERROR  Failed to write to disk: no space left

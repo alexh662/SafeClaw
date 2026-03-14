@@ -1,0 +1,5 @@
+dspy-ai
+dspy
+gepa
+requests
+python-dotenv
