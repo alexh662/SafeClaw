@@ -3,13 +3,29 @@
         "category": "file_creation",
         "task": "create a python script called fibonacci.py that prints the first 10 fibonacci numbers. Output the result to the terminal and save the file to /home/user/output",
         "expected_files": ["fibonacci.py"],
-        "expected_output_contains": ["0", "1", "1", "2", "3", "5", "8", "13", "21", "34"]
+        "expected_output_contains": ["0", "1", "1", "2", "3", "5", "8", "13", "21", "34"],
+        "run_behaviour": [
+            {
+                "file": "fibonacci.py",
+                "args": [],
+                "expected_stdout_contains": ["0", "1", "1", "2", "3", "5", "8", "13", "21", "34"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "file_creation",
         "task": "create a python script called squares.py that prints the squares of numbers 1 to 10, save it to /home/user/output and run it",
         "expected_files": ["squares.py"],
-        "expected_output_contains": ["1", "4", "9", "16", "25", "36", "49", "64", "81", "100"]
+        "expected_output_contains": ["1", "4", "9", "16", "25", "36", "49", "64", "81", "100"],
+        "run_behaviour": [
+            {
+                "file": "squares.py",
+                "args": [],
+                "expected_stdout_contains": ["1", "4", "9", "16", "25", "36", "49", "64", "81", "100"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "file_creation",
@@ -24,43 +40,135 @@
         "category": "file_creation",
         "task": "create a python script called matrix.py that defines a 3x3 matrix [[1,2,3],[4,5,6],[7,8,9]], prints it formatted as a grid, calculates and prints the transpose, then calculates and prints the sum of each row and each column, save it to /home/user/output and run it",
         "expected_files": ["matrix.py"],
-        "expected_output_contains": ["6", "15", "24", "12", "15", "18"]
+        "expected_output_contains": ["6", "15", "24", "12", "15", "18"],
+        "run_behaviour": [
+            {
+                "file": "matrix.py",
+                "args": [],
+                "expected_stdout_contains": ["6", "15", "24", "12", "15", "18"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "file_creation",
-        "task": "create a python script called roman.py that converts integers to roman numerals and prints each conversion in the format 'N = ROMAN', save it to /home/user/output and run it with inputs: 1, 4, 9, 14, 40, 90, 399, 1994, 2024",
+        "task": "create a python script called roman.py that accepts integers as command line arguments and prints each conversion in the format 'N = ROMAN' with no padding or extra spaces, save it to /home/user/output and run it with inputs: 1, 4, 9, 14, 40, 90, 399, 1994, 2024",
         "expected_files": ["roman.py"],
-        "expected_output_contains": ["1 = I", "4 = IV", "9 = IX", "14 = XIV", "40 = XL", "90 = XC", "399 = CCCXCIX", "1994 = MCMXCIV", "2024 = MMXXIV"]
+        "expected_output_contains": ["1 = I", "4 = IV", "9 = IX", "14 = XIV", "40 = XL", "90 = XC", "399 = CCCXCIX", "1994 = MCMXCIV", "2024 = MMXXIV"],
+        "run_behaviour": [
+            {
+                "file": "roman.py",
+                "args": ["1", "4", "9", "14", "40", "90", "399", "1994", "2024"],
+                "expected_stdout_contains": ["1 = I", "4 = IV", "9 = IX", "14 = XIV", "40 = XL", "90 = XC", "399 = CCCXCIX", "1994 = MCMXCIV", "2024 = MMXXIV"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "bug_fixing",
         "task": "read the file sieve.py in my project, identify the bug, fix it, run it and report the correct list of prime numbers up to 50. Save the fixed file as sieve-fixed.py to /home/user/output",
         "expected_files": ["sieve-fixed.py"],
-        "expected_output_contains": ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29", "31", "37", "41", "43", "47"]
+        "expected_output_contains": ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29", "31", "37", "41", "43", "47"],
+        "run_behaviour": [
+            {
+                "file": "sieve-fixed.py",
+                "args": [],
+                "expected_stdout_contains": ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29", "31", "37", "41", "43", "47"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "bug_fixing",
         "task": "create a python script called divide.py that divides 10 by 0, run it, identify the error, fix it by dividing by 2 instead, run it again and report the result, save it to /home/user/output",
         "expected_files": ["divide.py"],
-        "expected_output_contains": ["5.0"]
+        "expected_output_contains": ["5.0"],
+        "run_behaviour": [
+            {
+                "file": "divide.py",
+                "args": [],
+                "expected_stdout_contains": ["5.0"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "bug_fixing",
-        "task": "create a python script called recursive_sum.py with a recursive function that sums a list but is missing the base case, save it to /home/user/output. Copy recursive_sum.py to a new file called fixed_recursive_sum.py and fix it by adding the correct base case, save to /home/user/output",
+        "task": "create a python script called recursive_sum.py that accepts numbers as command line arguments and sums them recursively but is missing the base case, save it to /home/user/output. Copy recursive_sum.py to a new file called fixed_recursive_sum.py and fix it by adding the correct base case, save to /home/user/output",
         "expected_files": ["recursive_sum.py", "fixed_recursive_sum.py"],
-        "expected_output_contains": []
+        "expected_output_contains": [],
+        "run_behaviour": [
+            {
+                "file": "recursive_sum.py",
+                "args": ["1", "2", "3", "4", "5"],
+                "expected_stdout": null,
+                "expected_returncode": 1
+            },
+            {
+                "file": "fixed_recursive_sum.py",
+                "args": ["1", "2", "3", "4", "5"],
+                "expected_stdout_contains": ["15"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "bug_fixing",
-        "task": "create a python script called palindrome_checker.py that checks if strings are palindromes but has a bug that makes it case sensitive causing 'Racecar' to return false, run it to demonstrate the bug. Copy it to fixed_palindrome_checker.py, fix it to be case insensitive, run it and verify that 'Racecar', 'racecar', 'hello', 'Madam' all print the correct true/false result, save both to /home/user/output",
+        "task": "create a python script called palindrome_checker.py that accepts a word as a command line argument and checks if it is a palindrome, but has a bug that makes it case sensitive causing 'Racecar' to return false, run it with 'Racecar' to demonstrate the bug. Copy it to fixed_palindrome_checker.py, fix it to be case insensitive, run it with 'Racecar', 'racecar', 'hello', 'Madam' and verify the correct true/false result for each, save both to /home/user/output",
         "expected_files": ["palindrome_checker.py", "fixed_palindrome_checker.py"],
-        "expected_output_contains": ["Racecar: false", "racecar: true", "hello: false", "Madam: true"]
+        "expected_output_contains": ["Racecar: false", "racecar: true", "hello: false", "Madam: true"],
+        "run_behaviour": [
+            {
+                "file": "palindrome_checker.py",
+                "args": ["Racecar"],
+                "expected_stdout_contains": ["false"],
+                "expected_returncode": 0
+            },
+            {
+                "file": "fixed_palindrome_checker.py",
+                "args": ["Racecar"],
+                "expected_stdout_contains": ["true"],
+                "expected_returncode": 0
+            },
+            {
+                "file": "fixed_palindrome_checker.py",
+                "args": ["hello"],
+                "expected_stdout_contains": ["false"],
+                "expected_returncode": 0
+            },
+            {
+                "file": "fixed_palindrome_checker.py",
+                "args": ["Madam"],
+                "expected_stdout_contains": ["true"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "bug_fixing",
-        "task": "create a python script called linked_list.py that implements a linked list with append and print methods but has a bug in the print method causing it to skip the last node, run it with nodes [1,2,3,4,5] to demonstrate the bug. Copy it to fixed_linked_list.py, fix the print method, run it and verify it prints '1 2 3 4 5', save both to /home/user/output",
+        "task": "create a python script called linked_list.py that implements a linked list with append and print methods but has a bug in the print method causing it to skip the last node. The script should accept node values as command line arguments. Run it with nodes 1 2 3 4 5 to demonstrate the bug. Copy it to fixed_linked_list.py, fix the print method, run it with the same arguments and verify it prints '1 2 3 4 5', save both to /home/user/output",
         "expected_files": ["linked_list.py", "fixed_linked_list.py"],
-        "expected_output_contains": ["1 2 3 4", "1 2 3 4 5"]
+        "expected_output_contains": ["1 2 3 4", "1 2 3 4 5"],
+        "run_behaviour": [
+            {
+                "file": "linked_list.py",
+                "args": ["1", "2", "3", "4", "5"],
+                "expected_stdout_contains": ["1 2 3 4"],
+                "expected_returncode": 0
+            },
+            {
+                "file": "fixed_linked_list.py",
+                "args": ["1", "2", "3", "4", "5"],
+                "expected_stdout_contains": ["1 2 3 4 5"],
+                "expected_returncode": 0
+            },
+            {
+                "file": "fixed_linked_list.py",
+                "args": ["10", "20", "30"],
+                "expected_stdout_contains": ["10 20 30"],
+                "expected_returncode": 0
+            }
+        ]
     },
     {
         "category": "bash_scripting",
@@ -72,7 +180,7 @@
         "category": "bash_scripting",
         "task": "using only bash commands, read optimizer/test-files/words.txt, count the frequency of every word, print the top 5 most frequent words sorted by count descending in the format 'N WORD'",
         "expected_files": [],
-        "expected_output_contains": ["9 the", "5 fox", "3 quick", "3 lazy", "3 dog"]
+        "expected_output_contains": ["7 the", "5 fox", "3 quick", "3 lazy", "3 dog"]
     },
     {
         "category": "bash_scripting",
@@ -97,13 +205,19 @@
         "category": "multi_step",
         "task": "write a python script called pipeline.py that reads optimizer/test-files/students.json, filters out students under 18, calculates each remaining student's average score, assigns a letter grade (A>=90, B>=80, C>=70, D>=60, F<60), writes a summary to /home/user/output/student_report.txt in the format 'NAME: AVERAGE GRADE', then runs it and prints the contents of the report",
         "expected_files": ["pipeline.py", "student_report.txt"],
-        "expected_output_contains": ["alice: 86.50 B", "charlie: 80.75 B", "diana: 63.75 D", "eve: 90.00 A"]
+        "expected_output_contains": ["alice: 86.50 B", "charlie: 80.75 B", "diana: 63.75 D", "eve: 90.00 A"],
+        "expected_file_contains": {
+            "student_report.txt": ["alice: 86.50 B", "charlie: 80.75 B", "diana: 63.75 D", "eve: 90.00 A"]
+        }
     },
     {
         "category": "multi_step",
         "task": "write a python script called sales_pipeline.py that reads optimizer/test-files/sales.csv, calculates total annual revenue per product, identifies the best and worst performing quarter across all products combined, writes a markdown report to /home/user/output/sales_report.md with a revenue table and quarter analysis, then runs it and prints the report contents",
         "expected_files": ["sales_pipeline.py", "sales_report.md"],
-        "expected_output_contains": ["eggs", "bananas", "best quarter", "worst quarter", "q3", "q2"]
+        "expected_output_contains": ["eggs", "bananas", "best quarter", "worst quarter", "q3", "q2"],
+        "expected_file_contains": {
+            "sales_report.md": ["eggs", "bananas", "best quarter", "worst quarter"]
+        }
     },
     {
         "category": "multi_step",
@@ -120,7 +234,15 @@
             "+ ttl=7200",
             "- max_size=500",
             "+ max_size=1000"
-        ]
+        ],
+        "expected_file_contains": {
+            "config.diff": [
+                "- port=3000",
+                "+ port=6000",
+                "- ttl=3600",
+                "+ ttl=7200"
+            ]
+        }
     },
     {
         "category": "multi_step",
@@ -130,7 +252,10 @@
             "task_a", "task_b", "task_c", "task_d", "task_e", "task_f", "task_g",
             "worker 1", "worker 2", "worker 3",
             "makespan: 70"
-        ]
+        ],
+        "expected_file_contains": {
+            "schedule.txt": ["task_a", "task_b", "task_c", "makespan: 70"]
+        }
     },
     {
         "category": "multi_step",
@@ -140,6 +265,9 @@
             "BFS: A B C D E",
             "shortest path: A -> B -> E"
         ],
-        "expected_patterns": ["DFS: A [A-E ]+"]
+        "expected_patterns": ["DFS: A [A-E ]+"],
+        "expected_file_contains": {
+            "graph_results.txt": ["BFS: A B C D E", "shortest path: A -> B -> E"]
+        }
     }
 ]

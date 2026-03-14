@@ -68,6 +68,7 @@ export async function runAgent(task: string, systemPrompt?: string, verbose = fa
 
     const agent = new ToolLoopAgent({
         model: anthropic("claude-sonnet-4-6"),
+        maxTokens: 8000,
         tools,
         stopWhen: stepCountIs(20),
         system: system,
