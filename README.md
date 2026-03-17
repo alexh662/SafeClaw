@@ -1,3 +1,7 @@
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![DSPy](https://img.shields.io/badge/DSPy-000000?style=for-the-badge)
+
 # SafeClaw
 
 A secure, sandboxed AI agent inspired by OpenClaw, built with TypeScript and just-bash to safely execute code in an isolated environment. 
@@ -13,7 +17,7 @@ Includes a prompt optimisation pipeline using DSPy MIPROv2, with 20 test cases a
 
 - **Agent**: TypeScript, Anthropic API (claude-sonnet-4-6 or haiku-4-5), just-bash
 - **Server**: Hono on Node.js
-- **Optimizer**: Python, DSPy MIPROv2
+- **Optimiser**: Python, DSPy MIPROv2
 
 ## Dev Instructions
 
@@ -69,14 +73,14 @@ curl -X POST http://localhost:3000/run \
   -d '{"task": "cresystem_prompt_MIPROv2ate a python script that prints hello world and save it to /home/user/output"}'
 ```
 
-## Optimizer
+## Optimiser
 
-The optimizer evaluates and improves the agent system prompt using DSPy MIPROv2.
+The optimiser evaluates and improves the agent system prompt using DSPy MIPROv2.
 
 ### Setup
 
 ```bash
-cd optimizer
+cd optimiser
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -87,19 +91,19 @@ pip install -r requirements.txt
 Run a baseline evaluation:
 
 ```bash
-python optimizer.py --eval-only
+python optimiser.py --eval-only
 ```
 
 Run full optimisation:
 
 ```bash
-python optimizer.py --candidates 4
+python optimiser.py --candidates 4
 ```
 
 Restrict to specific categories:
 
 ```bash
-python optimizer.py --categories bash_scripting multi_step --candidates 4
+python optimiser.py --categories bash_scripting multi_step --candidates 4
 ```
 
-The optimised system prompt is saved to `optimizer/results/system_prompt_MIPROv2.txt`.
+The optimised system prompt is saved to `optimiser/results/system_prompt_MIPROv2.txt`.
