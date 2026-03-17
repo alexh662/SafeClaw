@@ -4,7 +4,7 @@
 
 # SafeClaw
 
-A secure, sandboxed AI agent inspired by OpenClaw, built with TypeScript and just-bash to safely execute code in an isolated environment. 
+A secure, sandboxed AI agent inspired by OpenClaw, built with TypeScript and just-bash to safely execute code in an isolated environment.
 
 Includes a prompt optimisation pipeline using DSPy MIPROv2, with 20 test cases across four categories: file creation, bug fixing, bash scripting, and multi-step pipelines.
 
@@ -12,6 +12,7 @@ Includes a prompt optimisation pipeline using DSPy MIPROv2, with 20 test cases a
 
 * Transitioning to a VS Code Extension interface and migrating the execution engine from just-bash to local Docker containers to retain secure and isolated execution of agent generated code.
 * Refactoring the DSPy MIPROv2 testing and metrics to a more continous scoring system and adding more tests to improve the effectiveness of MIPROv2.
+* Support for multiple LLM API keys
 
 ## Tech Stack
 
@@ -32,7 +33,7 @@ Includes a prompt optimisation pipeline using DSPy MIPROv2, with 20 test cases a
 1. Clone the repo and install dependencies:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/alexh662/SafeClaw.git
 cd SafeClaw
 npm install
 ```
@@ -46,7 +47,7 @@ cp .env.example .env
 Required variables:
 
 ```
-ANTHROPIC_API_KEY=your_key_here
+ANTHROPIC_API_KEY=paste_your_key_here
 OUTPUT_DIR=/home/user/output
 PORT=3000
 ```
