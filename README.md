@@ -4,6 +4,11 @@ A secure, sandboxed AI agent inspired by OpenClaw, built with TypeScript and jus
 
 Includes a prompt optimisation pipeline using DSPy MIPROv2, with 20 test cases across four categories: file creation, bug fixing, bash scripting, and multi-step pipelines.
 
+## Current Focus
+
+* Transitioning to a VS Code Extension interface and migrating the execution engine from just-bash to local Docker containers to retain secure and isolated execution of agent generated code.
+* Refactoring the DSPy MIPROv2 testing and metrics to a more continous scoring system and adding more tests to improve the effectiveness of MIPROv2.
+
 ## Tech Stack
 
 - **Agent**: TypeScript, Anthropic API (claude-sonnet-4-6 or haiku-4-5), just-bash
